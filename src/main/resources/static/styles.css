@@ -1,0 +1,47 @@
+img {
+    width: 30vw;
+}
+
+div.component-group:nth-child(odd) {
+    float: left;
+    padding-right: 20px;
+}
+
+div.component-group:nth-child(even) {
+    float: left;
+    padding-right: 0;
+}
+
+div.component-group {
+    width: 50%;
+}
+
+.grid:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+span.validationError {
+    color: red;
+}
+
+.submit-btn {
+    padding: 8px 16px;
+    margin: 0.5em 0;
+    background-color: lightskyblue;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+    background-color: deepskyblue;
+}

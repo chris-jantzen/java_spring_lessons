@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>MacBook Store</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+    <h1>Configure your MacBook!</h1>
+    <img th:src="@{/images/MacBookStore.png}" alt="MacBook Store" />
+
+    <form method="POST" th:object="${macBook}">
+        <div class="grid">
+            <div class="component-group" id="model">
+                <h3>Select your model</h3>
+                <div th:each="computerComponent : ${model}">
+                    <input th:field="*{computerComponents}" type="checkbox" th:value="${computerComponent.id}">
+                    <span th:text="${computerComponent.name}">COMPONENT</span>
+                    <br/>
+                </div>
+            </div>
+
+            <div class="component-group" id="processor">
+                <h3>Select your processor</h3>
+                <div th:each="computerComponent : ${processor}">
+                    <input th:field="*{computerComponents}" type="checkbox" th:value="${computerComponent.id}">
+                    <span th:text="${computerComponent.name}">COMPONENT</span>
+                    <br/>
+                </div>
+            </div>
+
+            <div class="component-group" id="memory">
+                <h3>Select your memory</h3>
+                <div th:each="computerComponent : ${memory}">
+                    <input th:field="*{computerComponents}" type="checkbox" th:value="${computerComponent.id}">
+                    <span th:text="${computerComponent.name}">COMPONENT</span>
+                    <br/>
+                </div>
+            </div>
+
+            <div class="component-group" id="storage">
+                <h3>Select your storage</h3>
+                <div th:each="computerComponent : ${storage}">
+                    <input th:field="*{computerComponents}" type="checkbox" th:value="${computerComponent.id}">
+                    <span th:text="${computerComponent.name}">COMPONENT</span>
+                    <br/>
+                </div>
+            </div>
+
+            <div class="component-group" id="display">
+                <h3>Select your display</h3>
+                <div th:each="computerComponent: ${display}">
+                    <input th:field="*{computerComponents}" type="checkbox" th:value="${computerComponent.id}">
+                    <span th:text="${computerComponent.name}">COMPONENT</span>
+                    <br/>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3>Name your computer:</h3>
+            <input type="text" th:field="*{name}" />
+            <br/>
+
+            <button class="submit-btn">Submit Your Order</button>
+        </div>
+    </form>
+</body>
+</html>
